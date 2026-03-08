@@ -32,4 +32,4 @@ def generuj_dane_calkowite(folder, ilosc_punktow, wymiary, min_val=0, max_val=10
 pulpit_path = r'D:\Pulpit\PWR\modelowanie i statystyka\data'
 
 # Generujemy np. 100 punktów, 5-wymiarowych, liczby od 1 do 50
-sciezka = generuj_dane_calkowite(pulpit_path, 10000, 100, 1, 10000)
+sciezka = generuj_dane_calkowite(pulpit_path, 10000, 100, 1, 10)
