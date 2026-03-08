@@ -12,9 +12,16 @@ def generuj_dane_calkowite(folder, ilosc_punktow, wymiary, min_val=0, max_val=10
     nazwa_pliku = f"data_int_{ilosc_punktow}p_{wymiary}d.txt"
     sciezka_pelna = os.path.join(folder, nazwa_pliku)
 
+
+
     # 2. Generowanie macierzy liczb całkowitych
     # np.random.randint(low, high, size)
-    dane = np.random.randint(min_val, max_val + 1, size=(ilosc_punktow, wymiary))
+    #dane = np.random.randint(min_val, max_val + 1, size=(ilosc_punktow, wymiary))
+
+    # tworzymy generator
+    rng = np.random.default_rng()
+    # generowanie liczb całkowitych
+    dane = rng.integers(min_val, max_val + 1, size=(ilosc_punktow, wymiary))
 
     # 3. Zapis do pliku
     with open(sciezka_pelna, 'w') as plik:

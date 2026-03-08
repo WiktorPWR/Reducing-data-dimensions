@@ -31,7 +31,7 @@ def redukacja_wymiarow(macierz_punktow, docelowy_wymiar=1):
     odchylenie[odchylenie == 0] = 1.0
     macierz_znormalizowana = (macierz_punktow - srednia) / odchylenie
     kowariancja = np.cov(macierz_znormalizowana, rowvar=False)
-    wartosci_wlasne, wektory_wlasne = np.linalg.eig(kowariancja)
+    wartosci_wlasne, wektory_wlasne = np.linalg.eigh(kowariancja)
     idx = np.argsort(wartosci_wlasne)[::-1]
     wartosci_wlasne = wartosci_wlasne[idx]
     wektory_wlasne = wektory_wlasne[:, idx]
